@@ -34,6 +34,8 @@ public class DotIncindiareyDevices {
     }
     public static void main(String[] args) {
         IBIO console = new IBIO();
+        int number = console.inputInt("gimme a number(positive integer please)");
+        int base = console.inputInt("gimme a number(positivity is integeral!)");
         console.output((DotIncindiareyDevices.explodeDots(314, 10)).toString());
     }
 }
