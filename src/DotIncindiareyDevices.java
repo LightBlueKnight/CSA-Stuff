@@ -23,6 +23,14 @@ public class DotIncindiareyDevices {
         }
         return explodedDots;
     }
+    public static int collectDots(ArrayList<Integer> list, int base){
+        int result = 0;
+        int st_base = 0;
+        for(int idx = list.size()-1; idx >=0; idx--){
+            result += (int) Math.pow(base,idx) * list.get(idx);
+        }
+        return result;
+    }
 
     private static int subtractModulus(int num, int base){
         while(true){
@@ -36,6 +44,8 @@ public class DotIncindiareyDevices {
         IBIO console = new IBIO();
         int number = console.inputInt("gimme a number(positive integer please)");
         int base = console.inputInt("gimme a number(positivity is integeral!)");
-        console.output((DotIncindiareyDevices.explodeDots(314, 10)).toString());
+        ArrayList<Integer> array = (DotIncindiareyDevices.explodeDots(number, base));
+        console.output(array.toString());
+        console.output(collectDots(array, base));
     }
 }
